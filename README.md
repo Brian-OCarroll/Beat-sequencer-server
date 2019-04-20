@@ -2,7 +2,7 @@
 
 
 To try this app live, visit [here](https://hyperlooper.herokuapp.com/).
-
+To see live server, visit [here](https://hyper-looper-server.herokuapp.com/)
 ## API Documentation
 Endpoints on the server side include:
 ### 'api/users' - user registration
