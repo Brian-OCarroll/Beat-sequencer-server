@@ -14,7 +14,7 @@ Returns list of users. ONLY USED FOR TESTING of user creation, not meant for pro
 #### POST '/login'
 Authentication of user login.
 
-### 'api/drums'
+### 'api/drums' - drum loop library
 This endpoint displays protected information about user's saved drums loops. Requires login
 #### GET '/'
 Get all loops created by the user.
