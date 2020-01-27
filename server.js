@@ -6,6 +6,8 @@ const morgan = require('morgan');
 const passport = require('passport');
 var cors = require('cors');
 const fs = require('fs');
+var http = require('http');
+var https = require('https');
 
 var privateKey = fs.readFileSync('./key.pem').toString();
 var certificate = fs.readFileSync('./csr.pem').toString();
