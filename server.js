@@ -4,9 +4,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
-var cors = require('cors')
+var cors = require('cors');
+const fs = require('fs');
 
- 
+var privateKey = fs.readFileSync('./key.pem').toString();
+var certificate = fs.readFileSync('./csr.pem').toString();
+
+var credentials = {key: privateKey, cert: certificate};
  
 
 // Here we use destructuring assignment with renaming so the two variables
@@ -67,7 +71,7 @@ function runServer(databaseUrl, port = PORT) {
       if (err) {
         return reject(err);
       }
-      server = app.listen(port, () => {
+      server = https.createServer(credentials, app).listen(port, () => {
         console.log(`Your app is listening on port ${port}`);
         resolve();
       })
